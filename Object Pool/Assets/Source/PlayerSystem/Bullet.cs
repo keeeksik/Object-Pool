@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace PlayerSystem
 {
-    public class Bullet : MonoBehaviour
+    public class Bullet : MonoBehaviour, IPoolabel<Bullet>
     {
         [SerializeField] private float speed;
         [SerializeField] private float lifetime;
 
-        private BulletObjectPool bulletPool;
+        private ObjectPool<Bullet> bulletPool;
 
-        public void Init(BulletObjectPool pool)
+        public void Init(ObjectPool<Bullet> pool)
         {
             bulletPool = pool;
         }

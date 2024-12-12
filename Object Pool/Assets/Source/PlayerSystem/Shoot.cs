@@ -11,9 +11,9 @@ namespace PlayerSystem
     public class Shoot : MonoBehaviour
     {
         [SerializeField] private Transform shootPoint;
-        private BulletObjectPool bulletPool;
+        private ObjectPool<Bullet> bulletPool;
 
-        public void Init(BulletObjectPool pool)
+        public void Init(ObjectPool<Bullet> pool)
         {
             bulletPool = pool;
         }

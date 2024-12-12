@@ -10,11 +10,11 @@ namespace Core
         [SerializeField] private PlayerInput playerInput;
         [SerializeField] private Shoot shoot;
 
-        private BulletObjectPool bulletObjectPool;
+        private ObjectPool<Bullet> bulletObjectPool;
 
         private void Awake()
         {
-            bulletObjectPool = new BulletObjectPool(bulletPrefab);
+            bulletObjectPool = new ObjectPool<Bullet>(bulletPrefab);
             shoot.Init(bulletObjectPool);
             playerInput.Init(shoot);
         }
